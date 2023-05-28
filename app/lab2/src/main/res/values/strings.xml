@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">lab2</string>
+    <string-array name="currency_options">
+        <item>USD</item>
+        <item>UAH</item>
+        <item>EUR</item>
+        <item>ZL</item>
+    </string-array>
+
+    <string-array name="currency_options_2">
+        <item>UAH</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>ZL</item>
+    </string-array>
+</resources>
