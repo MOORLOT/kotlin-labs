@@ -108,7 +108,6 @@ class MainActivity : AppCompatActivity() {
                             outputField?.setText(conversionResult.toString())
                             rateBaseEditText?.setText(conversionResult2.toString())
                         } catch (e: HttpException) {
-                            // Handle API call failure
                             val errorBody = e.response()?.errorBody()?.string()
                             Toast.makeText(
                                 this@MainActivity,

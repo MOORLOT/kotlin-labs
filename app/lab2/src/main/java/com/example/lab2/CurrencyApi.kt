@@ -6,3 +6,4 @@ interface CurrencyApi {
     @GET("bank/currency")
     suspend fun getCurrencies(): List<Currency>
 }
+

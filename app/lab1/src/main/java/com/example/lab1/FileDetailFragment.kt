@@ -40,19 +40,30 @@ class FileDetailFragment : Fragment() {
                 progress += 10
                 progressBar.progress = progress
                 progressTextView.text = "Progress: $progress%"
-                Thread.sleep(200)
+                if (progress >= 30){
+                    progressTextView.text = "Progress: $progress% - Lets go!"
+                    Thread.sleep(1000)
+                }
+                if (progress >= 99){
+                    progressTextView.text = "Progress: $progress% - Wait, something go wrong!"
+                    Thread.sleep(1000)
+                }
+                Thread.sleep(100)
             }
-            progressTextView.text = "Progress: 100% - Download Complete!"
+            progressTextView.text = "Progress: error% - just joke!"
             showFileDetails(fileName)
-        }, 1000)
+        }, 700)
     }
 
     private fun showFileDetails(fileName: String?) {
-        val fileDetailsTextView: TextView = requireView().findViewById(R.id.fileDetailsTextView)
-        fileDetailsTextView.text = "File Name: $fileName"
-        progressBar.visibility = View.GONE
-        progressTextView.visibility = View.GONE
-        fileDetailsTextView.visibility = View.VISIBLE
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({
+            val fileDetailsTextView: TextView = requireView().findViewById(R.id.fileDetailsTextView)
+            fileDetailsTextView.text = "File Name: $fileName"
+            progressBar.visibility = View.GONE
+            progressTextView.visibility = View.GONE
+            fileDetailsTextView.visibility = View.VISIBLE
+        }, 1000)
     }
 
     companion object {
@@ -67,3 +78,4 @@ class FileDetailFragment : Fragment() {
         }
     }
 }
+

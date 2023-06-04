@@ -25,7 +25,7 @@ class FileListFragment : Fragment() {
         super.onAttach(context)
         fileSelectedListener = context as? OnFileSelectedListener
         if (fileSelectedListener == null) {
-            throw ClassCastException("$context must implement OnFileSelectedListener")
+            throw ClassCastException("$context")
         }
     }
 
@@ -35,7 +35,7 @@ class FileListFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_file_list, container, false)
         val fileList = rootView.findViewById<ListView>(R.id.fileList)
 
-        val files = arrayOf("File 1", "File 2", "File 3", "File 4", "File 5")
+        val files = arrayOf("Bakalov", "Artem", "Igorovych", "PMA", "mark: 5")
         fileListAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, files)
         fileList.adapter = fileListAdapter
 
