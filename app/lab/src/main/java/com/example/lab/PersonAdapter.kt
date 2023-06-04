@@ -45,11 +45,6 @@ class PersonAdapter(val items: MutableList<Person>) :
         }
     }
 
-    fun editPerson (person: Person) {
-        val index = items.indexOf(person)
-
-    }
-
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
         val personID = itemView.findViewById<TextView>(R.id.editTextID)
